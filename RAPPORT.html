@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="RAPPORT.css" type="text/css" />
+        <meta charset="latin" />
+        <title>Rapport</title>
+    </head>
+    <body>
+        <div id="form_toolbar" style="text-align:center; height:18px;">
+            <span style="text-align:center; font-size:16px;"><i>Rapport du projet WIM (Google-form like) - Ludovic CARRE, Yoan LECOQ</i></span>
+        </div>
+        <div id="form_container">
+            <h1>Temps de travail</h1>
+            <table>
+                <tr><th>Création de : la base de données, contraintes, fonctions SQL</th><td>6 heures (en partie dû à la syntaxe MySQL)</td></tr>
+                <tr><th>L'éditeur de formulaires</th><td>6h30 approx.</td></tr>
+                <tr><th>Page de connexion + page d'inscription</th><td>3 heures approx.</td></tr>
+                <tr><th>Page de gestion des formulaires utilisateur</th><td>5 heures approx.</td></tr>
+                <tr><th>Réception des réponses utilisateur</th><td>1h30 approx.</td></tr>
+                <tr><th>Page d'affichage des résultats</th><td>1 heure approx.</td></tr>
+            </table>
+            <h1>Répartition des tâches</h1>
+            <table>
+                <tr><th>Ensemble</th><td>
+                        Nous avons commençé ensemble l'éditeur de formulaires, nous sommes accordés sur quelques conventions et façons de procéder. On s'est ensuite réparti les tâches, en se contactant régulièrement pour garder notre travail solide. 
+                        Bien entendu, avant tout cela, nous nous sommes accordés sur le schéma de la BDD.
+                </td></tr> 
+                <tr><th>Ludovic</th><td>
+                        <ul>
+                            <li>Création des tables de la BDD</li>
+                            <li>Contraintes référentielles, DELETE CASCADE...</li>
+                            <li>Fonctions et Procédures, pour créer un utilisateur, ou récupérer facilement les réponses à un élément, par exemple.</li>
+                            <li>Trigger d'auto-incrémentation d'id pour les éléments de réponse</li>
+                            <li>Script 'form_to_array', rendant un formulaire depuis la BDD sous forme d'un tableau PHP, donné au Javascript puis au HTML grâce à la fonction json_encode().</li>
+                            <li>'form.php', interprétation des réponses à un formulaire et envoi à la BDD.</li>
+                        </ul>
+                </td></tr>
+                <tr><th>Yoan</th><td>
+                    <ul>
+                        <li>Le javascript (notamment pour l'éditeur de formulaires, la vérification des données à l'inscription)</li>
+                        <li>Le CSS</li>
+                        <li>Le PHP de sauvegarde de formulaire, de la page de gestion des formulaires, de connexion, d'inscription et d'affichage des résultats d'un formulaire.</li>
+                    </ul>
+                </td></tr>
+            </table>
+            <h1>Ce que l'application promet</h1>
+            <ul>
+                <li>La possibilité de créer un compte, de se connecter, et de maintenir la connexion même après fermeture du navigateur.</li>
+                <li>Il n'est pas possible de créer un compte avec un login déjà utilisé.</li>
+                <li>Une même adresse mail peut être utilisée 3 fois maximum, pour plusieurs comptes.</li>
+                <li>Accéder à la liste de ses formulaires, en créer un même avec des caractères comme les apostrophes.</li>
+                <li>Modifier un formulaire avec l'éditeur.</li>
+                <ul>
+                    <li>Ajouter un élément, en choisissant son type, son label et son aide, et ajouter/retirer des options dynamiquement.</li>
+                    <li>Dans la vue sur le formulaire, monter, descendre ou supprimer un élément.</li>
+                </ul>
+                <li>Activer/Périmer un formulaire.</li>
+                <li>Si le formulaire est actif, on peut obtenir son lien pour y répondre.</li>
+                <li>Si on a répondu à un formulaire, il n'est plus modifiable, mais on peut obtenir les statistiques des résultats.</li>
+                <li>Si un formulaire est périmé, on ne peut effectivement pas y répondre.</li>
+                <li>Il n'est pas possible de modifier un formulaire dont l'utilisateur n'est pas le propriétaire.</li>
+            </ul>
+            <h1>Ce que l'application ne promet pas</h1>
+            <ul>
+                <li>La compatibilité avec certains navigateurs non récents;</li>
+                <li>La gestion des caractères à accents;</li>
+                <li>Un joli design;</li>
+                <li>L'application ne rend pas les questions obligatoires. Il est tout à fait possible de ne rien répondre à une question. Il était prévu que ce soit géré.</li>
+            </ul>
+            <h1>Particularités de l'application</h1>
+            <ul>
+                <li>L'éditeur de formulaires, assez calqué sur celui de Google forms, offre une certaine souplesse. L'utilisateur ne doit pas se sentir contraint pendant la création du formulaire.</li>
+                <li>L'application prend un maximum de précautions avec l'utilisateur et le prévient des conséquences de ses actions.
+                Par exemple, Il lui est demandé de confirmer s'il souhaite quitter, si il a modifié son formulaire sans sauvegarder.</li>
+                <li>La page d'inscription vérifie en temps réel les information entrées par l'utilisateur.</li>
+                <li>Le PHP utilise mysqli_real_escape_string() pour éviter la plupart des injections, ce qui semble être le minimum.</li>
+                <li>Les boutons d'action sur la page de gestion des formulaires sont gérés dynamiquement, pour chacun d'eux, en fonction de son activité, de si quelqu'un a déjà répondu ou non....</li>
+            </ul>
+            <h1>Liens avec le cours</h1>
+            <ul>
+                <li>SGBD : Les cours sur le SQL et les Triggers, même si c'est la syntaxe Oracle;</li>
+                <li>SGBD : Transformer un diagramme de classes en schéma relationnel de BDD;</li>
+                <li>WIM : Le Javascript, l'extension procédurale de MySQLi, les cookies, et les bases du web;</li>
+            </ul>
+        </div>
+    </body>
+</html>

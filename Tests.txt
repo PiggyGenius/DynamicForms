@@ -1,0 +1,147 @@
+IN THE LOCALHOST SQL INPUT SECTION : SET @@global.sql_mode = TRADITIONNAL; 
+
+
+TABLE USER
+
+INSERT INTO USER()
+VALUES(
+0,
+"PiggyGenius",
+"ludo.itrts@gmail.com",
+"MDPHASH",
+"Admin",
+"Carré",
+"Ludovic",
+"1995-11-06",
+"2014-05-11");
+
+
+TABLE FORM
+
+INSERT INTO FORM()
+VALUES(
+0,
+"TEST",
+"Admin Test",
+"This a test of the different features implemented in the database.",
+"2014-05-11",
+1);
+
+
+Table ELEMENT
+
+INSERT INTO ELEMENT()
+VALUES(
+"TEST",
+1,
+"List",
+"Listing of stuff",
+"LIST");
+
+INSERT INTO ELEMENT()
+VALUES(
+"TEST",
+2,
+"Textbox",
+"Write a lot",
+"TEXT");
+
+INSERT INTO ELEMENT()
+VALUES(
+"TEST",
+3,
+"Textfield",
+"Write a bit",
+"TEXT");
+
+INSERT INTO ELEMENT()
+VALUES(
+"TEST",
+4,
+"DateChoosing",
+"Pick a date",
+"Date");
+
+
+TABLE CONTENT
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+1,
+1,
+"I love watching you sleeping.");
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+1,
+2,
+"I love watching you eating.");
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+1,
+3,
+"I love watching you being.");
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+2,
+1,
+"BLANK");
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+3,
+1,
+"BLANK");
+
+INSERT INTO CONTENT()
+VALUES(
+"TEST",
+4,
+1,
+"BLANK");
+
+
+TABLE ANSWERDATE
+
+INSERT INTO ANSWERDATE()
+VALUES(
+"TEST",
+4,
+"2014-05-11");
+
+
+TABLE ANSWERLIST
+
+INSERT INTO ANSWERLIST()
+VALUES(
+"TEST",
+1,
+1);
+
+INSERT INTO ANSWERLIST()
+VALUES(
+"TEST",
+1,
+2);
+
+INSERT INTO ANSWERLIST()
+VALUES(
+"TEST",
+1,
+3);
+
+
+TABLE ANSWERTEXTBOX
+
+INSERT INTO ANSWERTEXT()
+VALUES(
+"TEST",
+2,
+"I actually find you very creepy");

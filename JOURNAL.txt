@@ -1,0 +1,66 @@
+-- Ici on mettra chaque chose qu'on a fait, qui l'a fait et combien de temps on a mis.
+-- On le mettra en forme correctement au moment de le rendre avec le projet.
+
+
+11/05/2014:LC : Création de la base de données ainsi que série de tuples afin déffectuer des tests futurs, implémentation d'une série de contraintes ON DELETE CASCADE, afin que la suppression d'un élément entraine automatiquement la
+		suppression de tous les tuples liés a lui, la suppression d'un utilisateur entraine la suppression des formulaires lui étant liés ce qui entraine la suppression des élements leurs étant lié et ainsi de suite.
+		2/3 heures.
+
+
+18/05/2014:LC : Création de deux fonctions et d'une procédure permettant de facilement accéder aux réponses d'un formulaire, implémentation d'une contrainte sur le type d'un élément avec ENUM.
+		3/4 heures, ceci est bien trop élevé et est a cause de mysql qui semble ne pas trouver cela interressant de mentionner que toutes les contraintes CHECK IN ne sont pas marquer comme erreurs mais gentiment ignoré,
+		ils ont préferé fister le standard sql et implémenter la fonction ENUM. De plus, la fonction ENUM n'interdit pas l'insertion de tuples ne respectant pas la contrainte, elle nullifie simplement la valeur corresspondant
+		a la colonne marqué par ENUM. J'ai mis un petit peu de temps a trouver la bonne requete pour modifier le mode sql en strict afin d'empécher cela, beaucoup était signalé comme correct mais ne changeait rien...
+
+22/05/2014:YL&LC : Création des fichiers nécéssaires à l'application elle-même. les fonctions d'insertion, la structure du créateur de formulaire, et certains principes, ont été entamés.
+                   A l'occasion de 1h15 de cours de WIM.
+
+23/05/2014:YL&LC : L'éditeur a maintenant deux divs utilitaires fixes : Une barre d'outils en haut et une zone d'édition (Question, Label, type de réponse) qui pop lors de l'ajout d'un élément, 
+                   qui permet de l'écrire et le configurer avant de l'insérer dans le preview. Si on choisit d'insérer une liste, on peut ajouter des options en cliquant sur un bouton.
+                   Le preview est scrollable si la zone d'édition est trop grande.
+                   A l'occasion de 1h15 de cours de WIM.
+24/05/2014:YL : Les zones utilitaires ont désormais une hauteur minimale (dans le cas d'un utilisateur qui s'amuse à réduire les proportions de sa fenêtre).
+                Dans la zone d'édition, si on choisit d'insérer une liste, on peut maintenant ajouter ET retirer des options précises.
+                On peut annuler l'ajout en cours, et donc faire disparaitre la zone d'édition. 
+                Le code est un peu plus propre.
+                1h approx dans la matinée.
+
+25/05/2014:YL : Pas mal d'améliorations. En gros, on peut ajouter n'importe quel type d'élément. Celui-ci est ajouté au preview, encadré de pointillés et mis en forme.
+                Une série de boutons est à sa tête, d'où on peut, pour l'instant le supprimer et le faire monter ou descendre.
+                Tout ajout ou suppression met à jour un tableau 'elements' de manière à ce qu'il soit propre. Pas de cases vides, pas de "sauts" d'index, etc. 
+                Même en cas de suppression, la longueur du tableau est réduite en conséquence.
+                Un bloc PHP obtient le tableau lors de l'appui sur le bouton 'sauvegarde' et il ne reste plus qu'à jouer au SQL avec.
+                Enfin, si l'utilisateur veut quitter, une boite de dialogue lui demande de confirmer.
+
+                Petit boulot aussi sur 'register.php'. Le formulaire (mail, mot de passe, etc) est vérifié et râle dynamiquement si quelque chose ne va pas.
+                
+                Je considère que l'éditeur de formulaires même est terminé, en oubliant l'aspect esthétique.
+                5h approx.
+
+
+
+29/05/2014:YL : Maintenant, on peut se logger sur le site. Création du compte Yoon et Carre (mots de passe habituels). La cryptage marche très bien, la connexion aussi, 
+                et un cookie est mis en place pour garder les caractéristiques de l'utilisateur où qu'il soit. S'il se connecte sous un autre nom, le cookie est écrasé.
+                'login.php' redirige vers 'myforms.php' qui dit bonjour à l'utilisateur en citant son prénom et nom.
+                2h approx, à cause de la redécouverte des fonction mysqli mais surtout d'une erreur SQL bien cachée empêchant tout login.
+                
+                EDIT : c'est officiel JE HAIS FIREFOX QUI M'A FAIT PERDRE PLUS DE 2 HEURES DE MA VIE
+                C'EST VRAI VOYONS C'EST LOGIQUE DE FAIRE UN ONSUBMIT QUI FAIT STRICTEMENT RIEN FFFFFFFFFF SOIS MAUDIT A JAMAIS
+                (bon maintenant l'application tourne sous firefox.)
+
+                EDIT : 'register.php' est absolument pafait, aspect esthétique exclu. L'utilisateur peut créer son compte, mais il ne peut pas prendre un login existant,
+                ni une adresse mail utilisée 3 fois.
+
+31/05/2014:YL : 'myforms.php' est complet, et 'app.php' sauvegarde effectivement un formulaire. Trop de détails à raconter. Il a des choses qui subsistent :
+                -> la BD n'aime pas beaucoup les formulaires à titre à accents.
+                -> Il faut empêcher la modification d'un formulaire activé ou dont il y a déjà des résultats. logique !
+                -> La suppression d'un formulaire doit aussi supprimer toutes les réponses, contenu, etc.
+                -> 'app.php' ne lit pas le formulaire depuis la BD. Il ne sait qu'écrire.
+
+                Une après-midi environ.
+
+01/06/2014:YL&LC : Tellement de changements que c'est trop long à écrire. Il reste à envoyer à la BD les réponses à un formulaire.
+                
+                   Tout un dimanche.
+
+                   Il reste le Rapport à écrire.

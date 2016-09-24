@@ -1,0 +1,6 @@
+TODO :
+
+-> On doit écrire le rapport HTML.
+-> On doit être sûr que les triggers marchent.
+
+
